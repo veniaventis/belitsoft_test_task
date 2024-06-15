@@ -27,9 +27,9 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run DataBaseTest
+      - name: database_test
         if: "github.event.inputs.deployment_target == 'database_test'"
         run: pytest -v test_database.py
-      - name: Run creation Data Base Script
+      - name: creation_data_base
         if: "github.event.inputs.deployment_target == 'creation_data_base'"
         run: python3 create_db.py
