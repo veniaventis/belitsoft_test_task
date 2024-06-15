@@ -1,0 +1,35 @@
+name: Run Data Base Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment-target:
+        description: Chose target
+        required: true
+        default:
+        type: choice
+        options:
+          - database_test
+          - creation_data_base
+
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run DataBaseTest
+        if: "github.event.inputs.deployment_target == 'database_test'"
+        run: pytest -v test_database.py
+      - name: Run creation Data Base Script
+        if: "github.event.inputs.deployment_target == 'creation_data_base'"
+        run: python3 create_db.py
