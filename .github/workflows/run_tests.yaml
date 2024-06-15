@@ -1,4 +1,4 @@
-name: Created and Populate Data Base
+name: Run Data Base Tests
 
 on:
   workflow_dispatch
