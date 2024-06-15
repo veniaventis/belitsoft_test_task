@@ -7,7 +7,7 @@ on:
         description: Chose target
         required: true
         default:
-        type: string
+        type: choice
         options:
           - database_test
           - creation_data_base
