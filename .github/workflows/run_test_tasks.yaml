@@ -33,3 +33,7 @@ jobs:
       - name: creation_data_base
         if: "github.event.inputs['deployment-target'] == 'creation_data_base'"
         run: python3 create_db.py
+      - name: Run SQL to check if DB Standed UP
+        if: "github.event.inputs['deployment-target'] == 'creation_data_base'"
+        run: sqlite3 locale.db "SELECT * FROM books;"
+
