@@ -1,5 +1,5 @@
 import pytest
-from models.models import Book
+from db_models.book_model import Book
 from utils.db_manager import DBManager
 from utils.data_generator import DataGenerator
 from utils.get_data import TestDataGet

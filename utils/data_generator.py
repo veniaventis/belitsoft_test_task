@@ -1,5 +1,5 @@
-from models.models import Book
 from mimesis import Person, Text, Datetime, Generic
+from db_models.book_model import Book
 
 text = Text()
 person = Person()

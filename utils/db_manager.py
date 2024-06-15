@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models.models import Base
+from db_models.book_model import Base
 from utils.data_generator import DataGenerator
 
 
