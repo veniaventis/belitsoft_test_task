@@ -36,4 +36,3 @@ jobs:
       - name: Run SQL to check if DB Stood UP
         if: "github.event.inputs['deployment-target'] == 'creation_data_base'"
         run: sqlite3 library.db "SELECT * FROM books;"
-
