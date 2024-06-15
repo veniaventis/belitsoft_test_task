@@ -29,5 +29,6 @@
   "id": {
     "test_id": 1,
     "wrong_id": 99
-  }
+  },
+  "count_of_books": 15
 }
