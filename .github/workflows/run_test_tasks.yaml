@@ -7,7 +7,7 @@ on:
         description: Chose target
         required: true
         default:
-        type: choice
+        type: string
         options:
           - database_test
           - creation_data_base
@@ -28,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: database_test
-        if: "github.event.inputs.deployment_target == 'database_test'"
+        if: "github.event.inputs['deployment-target'] == 'database_test'"
         run: pytest -v test_database.py
       - name: creation_data_base
-        if: "github.event.inputs.deployment_target == 'creation_data_base'"
+        if: "github.event.inputs['deployment-target'] == 'creation_data_base'"
         run: python3 create_db.py
